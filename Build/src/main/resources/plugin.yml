@@ -1,0 +1,11 @@
+name: "VirtualSpawnner"
+version: "1.0"
+main: "vb.$virtualspawnner.PluginMain"
+api-version: 1.13
+authors: [Alpha]
+description: "A Virtual Spawnner Plugin"
+commands:
+  virtualspawner:
+    aliases: [vs]
+    usage: "vs"
+permissions:

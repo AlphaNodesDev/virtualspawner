@@ -1,0 +1,357 @@
+{
+  "plugin.dependencies": "",
+  "plugin.load-before": "",
+  "plugin.version": "1.0",
+  "debug-build-mode": false,
+  "open-tab": 0,
+  "plugin-components": [
+    {
+      "children": [{
+        "=": "org.bukkit.command.CommandSender#sendMessage(java.lang.String)",
+        "parameters": [
+          {"=": "org.bukkit.Bukkit#getConsoleSender()"},
+          {
+            "=": "expr-hex-colored-string",
+            "parameters": [{
+              "size": 25,
+              "=": "expr-combine-strings",
+              "parameters": [
+                {
+                  "size": 4,
+                  "=": "expr-combine-strings",
+                  "parameters": [
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["  ______ ______ ______ ______ ______  "]
+                    },
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": [" |______|______|______|______|______|"]
+                    },
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": [" _   _ _      _               _ "]
+                    }
+                  ]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": ["| | | (_)    | |             | |"]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": ["| | | |_ _ __| |_ _   _  __ _| |"]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": ["| | | | | '__| __| | | |/ _` | |"]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": ["\\ \\_/ / | |  | |_| |_| | (_| | |"]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": [" \\___/|_|_|   \\__|\\__,_|\\__,_|_|"]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": ["  ____                                       "]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": [" / ___| _ __   __ ___      ___ __   ___ _ __ "]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": [" \\___ \\| '_ \\ / _` \\ \\ /\\ / / '_ \\ / _ \\ '__|"]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": ["  ___) | |_) | (_| |\\ V  V /| | | |  __/ |   "]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": [" |____/| .__/ \\__,_| \\_/\\_/ |_| |_|\\___|_|   "]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "=": "expr-string",
+                  "parameters": ["       |_|                                   "]
+                },
+                {"=": "expr-newline-character"},
+                {
+                  "size": 3,
+                  "=": "expr-combine-strings",
+                  "parameters": [
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["  ______ ______ ______ ______ ______  "]
+                    },
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": [" |______|______|______|______|______|"]
+                    },
+                    {"=": "expr-newline-character"}
+                  ]
+                },
+                {
+                  "=": "expr-string",
+                  "parameters": ["version "]
+                },
+                {"=": "expr-plugin-version"}
+              ]
+            }]
+          }
+        ]
+      }],
+      "=": "comp-plugin-enable"
+    },
+    {
+      "children": [{
+        "=": "org.bukkit.event.server.TabCompleteEvent#setCompletions(java.util.List<java.lang.String>)",
+        "parameters": [{
+          "size": 1,
+          "=": "expr-new-list",
+          "parameters": [{
+            "=": "expr-string",
+            "parameters": ["give"]
+          }]
+        }]
+      }],
+      "=": "org.bukkit.event.server.TabCompleteEvent",
+      "parameters": ["NORMAL"]
+    },
+    {
+      "children": [
+        {
+          "children": [{
+            "=": "org.bukkit.command.CommandSender#sendMessage(java.lang.String)",
+            "parameters": [
+              {"=": "expr-command-sender"},
+              {
+                "=": "expr-hex-colored-string",
+                "parameters": [{
+                  "size": 4,
+                  "=": "expr-combine-strings",
+                  "parameters": [
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["/vs help -- show help message "]
+                    },
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["/vs give -- Give Spawner"]
+                    },
+                    {"=": "expr-newline-character"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["/vs reload -- reload the plugin"]
+                    }
+                  ]
+                }]
+              }
+            ]
+          }],
+          "=": "stat-if-statement",
+          "parameters": [
+            {
+              "=": "expr-is-equal",
+              "parameters": [
+                {
+                  "=": "expr-command-argument",
+                  "parameters": [{
+                    "=": "expr-number",
+                    "parameters": ["0"]
+                  }]
+                },
+                {
+                  "=": "expr-string",
+                  "parameters": ["help"]
+                }
+              ]
+            },
+            "normal"
+          ]
+        },
+        {
+          "children": [{
+            "=": "org.bukkit.inventory.Inventory#addItem(org.bukkit.inventory.ItemStack...)",
+            "parameters": [
+              {
+                "=": "org.bukkit.inventory.InventoryHolder#getInventory()",
+                "parameters": [{"=": "expr-command-sender"}]
+              },
+              {
+                "size": 1,
+                "=": "expr-new-list",
+                "parameters": [{
+                  "=": "expr-new-named-item",
+                  "parameters": [
+                    {"=": "org.bukkit.Material#LEGACY_MOB_SPAWNER"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["specialspawner"]
+                    }
+                  ]
+                }]
+              }
+            ]
+          }],
+          "=": "stat-if-statement",
+          "parameters": [
+            {
+              "=": "expr-is-equal",
+              "parameters": [
+                {
+                  "=": "expr-command-argument",
+                  "parameters": [{
+                    "=": "expr-number",
+                    "parameters": ["0"]
+                  }]
+                },
+                {
+                  "=": "expr-string",
+                  "parameters": ["give"]
+                }
+              ]
+            },
+            "normal"
+          ]
+        }
+      ],
+      "=": "comp-command",
+      "parameters": [
+        "virtualspawner",
+        "vs",
+        "",
+        "",
+        "",
+        "vs"
+      ]
+    },
+    {
+      "children": [
+        {
+          "=": "org.bukkit.command.CommandSender#sendMessage(java.lang.String)",
+          "parameters": [
+            {"=": "org.bukkit.event.block.BlockPlaceEvent#getPlayer()"},
+            {
+              "=": "org.bukkit.inventory.ItemStack#getItemMeta()",
+              "parameters": [{
+                "=": "org.bukkit.inventory.meta.ItemMeta#getDisplayName()",
+                "parameters": [null]
+              }]
+            }
+          ]
+        },
+        {
+          "children": [{
+            "=": "org.bukkit.command.CommandSender#sendMessage(java.lang.String)",
+            "parameters": [
+              {"=": "org.bukkit.event.block.BlockPlaceEvent#getPlayer()"},
+              {
+                "=": "expr-string",
+                "parameters": ["special spawner"]
+              }
+            ]
+          }],
+          "=": "stat-if-statement",
+          "parameters": [
+            {
+              "=": "expr-is-equal",
+              "parameters": [
+                {
+                  "=": "org.bukkit.inventory.ItemStack#getItemMeta()",
+                  "parameters": [{
+                    "=": "org.bukkit.inventory.meta.ItemMeta#getDisplayName()",
+                    "parameters": [{"=": "org.bukkit.event.block.BlockPlaceEvent#getBlock()"}]
+                  }]
+                },
+                {
+                  "=": "expr-new-named-item",
+                  "parameters": [
+                    {"=": "org.bukkit.Material#LEGACY_MOB_SPAWNER"},
+                    {
+                      "=": "expr-string",
+                      "parameters": ["specialspawner"]
+                    }
+                  ]
+                }
+              ]
+            },
+            "normal"
+          ]
+        },
+        {
+          "children": [{
+            "=": "org.bukkit.command.CommandSender#sendMessage(java.lang.String)",
+            "parameters": [
+              {"=": "org.bukkit.event.block.BlockPlaceEvent#getPlayer()"},
+              null
+            ]
+          }],
+          "=": "stat-if-statement",
+          "parameters": [
+            {
+              "=": "expr-is-equal",
+              "parameters": [
+                {
+                  "=": "org.bukkit.block.Block#getType()",
+                  "parameters": [{"=": "org.bukkit.event.block.BlockPlaceEvent#getBlock()"}]
+                },
+                {"=": "org.bukkit.Material#SPAWNER"}
+              ]
+            },
+            "normal"
+          ]
+        }
+      ],
+      "=": "org.bukkit.event.block.BlockPlaceEvent",
+      "parameters": ["NORMAL"]
+    }
+  ],
+  "plugin.soft-dependencies": "",
+  "plugin.name": "VirtualSpawnner",
+  "plugin.prefix": "",
+  "current-plugin-component": 0,
+  "extensions": [
+    "sCombinedJava",
+    "sCustomHeads",
+    "sDiscordWebhooks",
+    "sEnchantGui",
+    "sFileUtils",
+    "sStringIsNumber",
+    "sTabCompletion",
+    "sUpdateChecker",
+    "sWorldEdit",
+    "sMultiverse-Core"
+  ],
+  "plugin.author": "Alpha",
+  "plugin.description": "A Virtual Spawnner Plugin",
+  "plugin.permissions": "",
+  "open-plugin-components": [
+    3,
+    2,
+    1,
+    0
+  ],
+  "plugin.website": ""
+}
